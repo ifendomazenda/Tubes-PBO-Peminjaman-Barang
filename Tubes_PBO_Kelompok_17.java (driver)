@@ -1,0 +1,107 @@
+package tubes_pbo_kelompok_17;
+
+import java.util.Scanner;
+
+public class Tubes_PBO_Kelompok_17 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Petugas petugas[] = null;
+        Anggota anggota[] = null;
+        Peminjaman pinjam[];
+        Barang barang[];
+        int pilih,found=0, i,nPetugas = 0, nAnggota = 0, nPinjam = 0;// , nBarang = 0
+        String user, pass;
+        
+        do {
+            System.out.print("\n\n 1. Login As Member\n 2. Sign Up As Member\n 3. Login As Petugas\n 4. Sign Up As Petugas\n 5. Exit\n\n Pilihan : ");
+            pilih = input.nextInt();
+            switch (pilih) {
+                case 1:
+                    System.out.print("\n Masukkan Username Member: ");
+                    user = input.next();
+                    System.out.print("\n Masukkan Password Member: ");
+                    pass = input.next();
+                    
+                    i=1;
+                    if (anggota != null){
+                        while (anggota[i] != null){
+                            if (anggota[i].cekAnggota(user,pass) == true) {
+                                found = 1;
+                                do{
+                                    System.out.println("\n\n 1. Peminjaman baru\n 2. Daftar barang pinjaman\n 3. Lihat Barang yang dipinjam\n 4. Exit\n\n Pilihan : ");
+                                    pilih = input.nextInt();
+                                    switch (pilih) {
+                                        case 1:
+                                            
+                                            break;
+                                        case 2:
+                                            break;
+                                        case 3:
+                                            break;
+                                        case 4:break;
+                                        default:
+                                            throw new AssertionError("\n Pilihan Tidak Ada !");
+                                    }
+                                }while (pilih != 4);
+                                break;
+                            }
+                            else{
+                                i++;
+                            }
+                        }
+                        if (found == 0){
+                            System.out.println("\n Username dan Password tidak ditemukan");
+                        }
+                    }
+                    else{
+                        System.out.println("\n ID tidak ditemukan, silahkan melakukan Sign Up Member");
+                    }
+                    break;
+                case 2:break;
+                case 3:
+                    System.out.print("\n Masukkan Username Petugas: ");
+                    user = input.next();
+                    System.out.print("\n Masukkan Password Petugas: ");
+                    pass = input.next();
+                    
+                    i=1;
+                    if (petugas != null){
+                        while (petugas[i] != null){
+                            if (petugas[i].cekPetugas(user,pass) == true) {
+                                found = 1;
+                                do{
+                                    System.out.println("\n\n 1. Peminjaman baru\n 2. Daftar barang pinjaman\n 3. Lihat Barang yang dipinjam\n 4. Exit\n\n Pilihan : ");
+                                    pilih = input.nextInt();
+                                    switch (pilih) {
+                                        case 1: break;
+                                        case 2: break;
+                                        case 3: break;
+                                        case 4: break;
+                                        default:
+                                            throw new AssertionError("\n Pilihan Tidak Ada !");
+                                    }
+                                }while (pilih != 4);
+                                break;
+                            }
+                            else{
+                                i++;
+                            }
+                        }
+                        if (found == 0){
+                            System.out.println("\n User ID tidak ditemukan");
+                        }
+                    }
+                    else{
+                        System.out.println("\n User ID tidak ditemukan, silahkan melakukan Sign Up Petugas");
+                    }
+                    break;
+                case 4:break;
+                case 5:break;
+                default:
+                    throw new AssertionError("\n Pilihan Tidak Ada !");
+            }
+        } while (pilih != 5);
+    }
+    
+}
+
