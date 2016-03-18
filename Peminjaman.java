@@ -3,10 +3,11 @@ package tubes_pbo_kelompok_17;
 public class Peminjaman {
     private Barang[] pinjaman;
     private Anggota peminjam;
-    private int statusPinjam; // sudah dikembalikan 1, belum dikembalikan 0
+    private int statusPinjam = 0; // sudah dikembalikan 1, belum dikembalikan 0
+    private String tglPinjam;
     private String tglKembali;
     private String tglTelat;
-    private int denda;
+    private int denda = 0;
     private int idPinjam;
 
     public Peminjaman(int idPinjam) {
@@ -76,6 +77,14 @@ public class Peminjaman {
 
     public void setIdPinjam(int idPinjam) {
         this.idPinjam = idPinjam;
+    }
+
+    public void setTglPinjam(String tglPinjam) {
+        this.tglPinjam = tglPinjam;
+    }
+
+    public String getTglPinjam() {
+        return tglPinjam;
     }
 
     
