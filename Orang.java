@@ -5,12 +5,11 @@ public class Orang {
     private int idOrang;
     private String tlahir;
     private String alamat;
-    private long noTelp;
-    private int id;
+    private String noTelp;
     private String statusOrang;
 
-    public Orang(int id) {
-        this.id = id;
+    public Orang(int idOrang) {
+        this.idOrang = idOrang;
     }
 
     public void setNama(String nama) {
@@ -29,12 +28,12 @@ public class Orang {
         this.alamat = alamat;
     }
 
-    public void setNoTelp(long noTelp) {
+    public void setNoTelp(String noTelp) {
         this.noTelp = noTelp;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int idOrang) {
+        this.idOrang = idOrang;
     }
 
     public void setStatusOrang(String statusOrang) {
@@ -57,16 +56,15 @@ public class Orang {
         return alamat;
     }
 
-    public long getNoTelp() {
+    public String getNoTelp() {
         return noTelp;
     }
 
     public int getId() {
-        return id;
+        return idOrang;
     }
 
     public String getStatusOrang() {
         return statusOrang;
     }
 }
-
