@@ -7,10 +7,10 @@ public class Tubes_PBO_Kelompok_17 {
         Scanner input = new Scanner(System.in);
         Petugas petugas[] = null;
         Anggota anggota[] = null;
-        Peminjaman pinjam[];
+        Peminjaman pinjam[] = null;
         Barang barang[];
-        int pilih,found=0, i,nPetugas = 0, nAnggota = 0, nPinjam = 0;// , nBarang = 0
-        String user, pass;
+        int pilih, found = 0, id, i, j, k;
+        String user, pass, temp;
         
         do {
             System.out.print("\n\n 1. Login As Member\n 2. Sign Up As Member\n 3. Login As Petugas\n 4. Sign Up As Petugas\n 5. Exit\n\n Pilihan : ");
@@ -32,7 +32,20 @@ public class Tubes_PBO_Kelompok_17 {
                                     pilih = input.nextInt();
                                     switch (pilih) {
                                         case 1:
+                                            j=0;
+                                            do{
+                                                j++;
+                                            }while (pinjam[j] != null);
                                             
+                                                pinjam[j].setPeminjam(anggota[i]);
+                                                pinjam[j].setIdPinjam(j);
+                                            System.out.print("\n Tanggal pinjam     : ");temp=input.nextLine();
+                                                pinjam[j].setTglPinjam(temp);
+                                            System.out.print("\n Tanggal Kembali    : ");temp=input.nextLine();
+                                                pinjam[j].setTglKembali(temp);
+                                            
+                                             
+                                            System.out.print("\n ");
                                             break;
                                         case 2:
                                             break;
@@ -57,7 +70,28 @@ public class Tubes_PBO_Kelompok_17 {
                         System.out.println("\n ID tidak ditemukan, silahkan melakukan Sign Up Member");
                     }
                     break;
-                case 2:break;
+                case 2:
+                    i=0;
+                    do {
+                        i++;
+                    } while (anggota[i] != null );
+                    System.out.println("\n Masukkan Data Anggota Baru\n\n");
+                    
+                    System.out.print("\n Nama Peminjam      : ");temp=input.nextLine();
+                        anggota[i].setNama(temp);
+                    System.out.print("\n Username Peminjam  : ");temp=input.nextLine();
+                        anggota[i].setUserAnggota(temp);
+                    System.out.print("\n Password Peminjam  : ");temp=input.nextLine();
+                        anggota[i].setPassAnggota(temp);
+                    System.out.print("\n Tempat & Tgl Lahir : ");temp=input.nextLine();
+                        anggota[i].setTlahir(temp);
+                    System.out.print("\n Alamat Peminjam    : ");temp=input.nextLine();
+                        anggota[i].setAlamat(temp);
+                    System.out.print("\n No Telp Peminjam   : ");temp=input.nextLine();
+                        anggota[i].setNoTelp(temp);
+                    anggota[i].setId(i);
+                    System.out.println("\n\n Anda Sudah Terdaftar dengan nomor id "+i);
+                    break;
                 case 3:
                     System.out.print("\n Masukkan Username Petugas: ");
                     user = input.next();
@@ -95,7 +129,28 @@ public class Tubes_PBO_Kelompok_17 {
                         System.out.println("\n User ID tidak ditemukan, silahkan melakukan Sign Up Petugas");
                     }
                     break;
-                case 4:break;
+                case 4:
+                    i=0;
+                    do {
+                        i++;
+                    } while (petugas[i] != null );
+                    System.out.println("\n Masukkan Data Anggota Baru\n\n");
+                    
+                    System.out.print("\n Nama Petugas       : ");temp=input.nextLine();
+                        petugas[i].setNama(temp);
+                    System.out.print("\n Username Petugas   : ");temp=input.nextLine();
+                        petugas[i].setUserPetugas(temp);
+                    System.out.print("\n Password Petugas   : ");temp=input.nextLine();
+                        petugas[i].setPassPetugas(temp);
+                    System.out.print("\n Tempat & Tgl Lahir : ");temp=input.nextLine();
+                        petugas[i].setTlahir(temp);
+                    System.out.print("\n Alamat Petugas     : ");temp=input.nextLine();
+                        petugas[i].setAlamat(temp);
+                    System.out.print("\n No Telp Petugas    : ");temp=input.nextLine();
+                        petugas[i].setNoTelp(temp);
+                        
+                    System.out.println("\n\n Anda Sudah Terdaftar");
+                    break;
                 case 5:break;
                 default:
                     throw new AssertionError("\n Pilihan Tidak Ada !");
@@ -104,4 +159,3 @@ public class Tubes_PBO_Kelompok_17 {
     }
     
 }
-
